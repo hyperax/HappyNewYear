@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">С Новым Годом!</string>
     <string name="santa_quest">Приключения \nДеда Мороза</string>
     <string name="new_year">Новогодние</string>
     <string name="start">Начать</string>
@@ -7,4 +8,5 @@
     <string name="hurrah">Ура!</string>
     <string name="houses_gifts_title">Подари подарки каждому домику!</string>
     <string name="no_gift_for_bad_house">Этому домику подарок не давать! :)</string>
+    <string name="share">Поделиться</string>
 </resources>

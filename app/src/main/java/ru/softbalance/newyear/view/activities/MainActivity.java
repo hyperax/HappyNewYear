@@ -8,6 +8,7 @@ import android.widget.Toast;
 import org.androidannotations.annotations.EActivity;
 
 import ru.softbalance.newyear.R;
+import ru.softbalance.newyear.view.fragments.GreetingFragment;
 import ru.softbalance.newyear.view.fragments.HousesFragment;
 import ru.softbalance.newyear.view.fragments.StartFragment;
 import ru.softbalance.newyear.view.fragments.TreeFragment;
@@ -15,7 +16,7 @@ import ru.softbalance.newyear.view.fragments.TreeFragment;
 @EActivity
 public class MainActivity extends AppCompatActivity implements StartFragment.Callback,
         TreeFragment.Callback,
-        HousesFragment.Callback {
+        HousesFragment.Callback{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +76,6 @@ public class MainActivity extends AppCompatActivity implements StartFragment.Cal
     }
 
     private Fragment buildGreetingFragment() {
-        // TODO return GreetingFragment.newInstance();
-        Toast.makeText(this, "А здесь отображается последний фрагмент с поздравлениями!", Toast.LENGTH_LONG).show();
-        return buildStartFragment();
+        return GreetingFragment.newInstance();
     }
 }

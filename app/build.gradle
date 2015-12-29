@@ -6,12 +6,28 @@ android {
     compileSdkVersion sdkVersion
     buildToolsVersion buildToolsProjectVersion
 
+    signingConfigs {
+        release {
+            storeFile file("keystores.jks")
+            storePassword System.getenv("KSTOREPWD")
+            keyAlias 'key0'
+            keyPassword System.getenv("KSTOREPWD")
+        }
+        debug {
+            storeFile file("keystores.jks")
+            storePassword System.getenv("KSTOREPWD")
+            keyAlias 'key0'
+            keyPassword System.getenv("KSTOREPWD")
+        }
+    }
+
     defaultConfig {
         applicationId appId
         minSdkVersion 15
         targetSdkVersion sdkVersion
         versionCode projectVersionCode
         versionName projectVersionName
+        signingConfig signingConfigs.debug
     }
 
     compileOptions {
