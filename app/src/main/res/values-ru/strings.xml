@@ -5,4 +5,6 @@
     <string name="start">Начать</string>
     <string name="light_up_tree">Зажги Елку!</string>
     <string name="hurrah">Ура!</string>
+    <string name="houses_gifts_title">Подари подарки каждому домику!</string>
+    <string name="no_gift_for_bad_house">Этому домику подарок не давать! :)</string>
 </resources>

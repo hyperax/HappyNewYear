@@ -8,4 +8,6 @@
     <color name="pink_light">#FCC6CB</color>
     <color name="green_dark">#419151</color>
     <color name="green_light">#59C770</color>
+    <color name="blue_dark">#166394</color>
+    <color name="blue_light">#527A94</color>
 </resources>
