@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 
 import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
@@ -34,7 +35,7 @@ public class TreeFragment extends BaseFragment implements Savable {
     View treeBackgroundView;
 
     @ViewById(R.id.tree)
-    View treeView;
+    ImageView treeView;
 
     @ViewById(R.id.next_btn)
     View nextButton;
@@ -91,12 +92,12 @@ public class TreeFragment extends BaseFragment implements Savable {
 
         if (isTreeReady) {
             treeBackgroundView.setBackgroundResource(R.drawable.tree_bg_checked);
-            treeView.setBackgroundResource(R.drawable.tree_checked);
+            treeView.setImageResource(R.drawable.tree_checked);
             nextButton.setVisibility(View.VISIBLE);
             bottomText.setVisibility(View.INVISIBLE);
         } else {
             treeBackgroundView.setBackgroundResource(R.drawable.tree_bg_default);
-            treeView.setBackgroundResource(R.drawable.tree_default);
+            treeView.setImageResource(R.drawable.tree_default);
             nextButton.setVisibility(View.GONE);
             bottomText.setVisibility(View.VISIBLE);
         }
