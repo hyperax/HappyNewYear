@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:scaleType="fitEnd"
-        android:src="@drawable/tree"
+        android:src="@drawable/trees"
         tools:ignore="ContentDescription" />
 
     <ImageView

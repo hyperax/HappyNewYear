@@ -8,9 +8,10 @@ import org.androidannotations.annotations.EActivity;
 
 import ru.softbalance.newyear.R;
 import ru.softbalance.newyear.view.fragments.StartFragment;
+import ru.softbalance.newyear.view.fragments.TreeFragment;
 
 @EActivity
-public class MainActivity extends AppCompatActivity implements StartFragment.Callback {
+public class MainActivity extends AppCompatActivity implements StartFragment.Callback, TreeFragment.Callback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,15 @@ public class MainActivity extends AppCompatActivity implements StartFragment.Cal
 
     @Override
     public void onStartClick(StartFragment f) {
-        replaceMainFragment(buildStartFragment(), null);
+        replaceMainFragment(buildTreeFragment(), null);
+    }
+
+    private TreeFragment buildTreeFragment() {
+        return TreeFragment.newInstance();
+    }
+
+    @Override
+    public void onClickLightUpTree(TreeFragment f) {
+        replaceMainFragment(buildTreeFragment(), null);
     }
 }
