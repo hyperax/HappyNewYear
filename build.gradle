@@ -1,8 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 ext.appId = 'ru.softbalance.newyear'
-ext.projectVersionName = '1.0.2016'
-ext.projectVersionCode = 1
+ext.projectVersionName = '1.0.2016.1'
+ext.projectVersionCode = 2
 
 ext.sdkVersion = 23
 ext.buildToolsProjectVersion = '23.0.2'

@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.List;
 
 import ru.softbalance.newyear.R;
+import ru.softbalance.newyear.helpers.AnimationUtils;
 import ru.softbalance.newyear.helpers.Savable;
 
 @EFragment(R.layout.fragment_houses)
@@ -81,6 +82,9 @@ public class HousesFragment extends BaseFragment implements Savable {
     }
 
     private void onCheckedChange(CompoundButton compoundButton, boolean isChecked) {
+        if (isChecked) {
+            AnimationUtils.showLightStarEffect(getActivity(), compoundButton);
+        }
         checkAllGiftsDelivered();
     }
 

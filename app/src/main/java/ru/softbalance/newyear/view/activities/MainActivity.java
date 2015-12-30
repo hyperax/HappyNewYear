@@ -3,7 +3,10 @@ package ru.softbalance.newyear.view.activities;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Toast;
+import android.view.MotionEvent;
+import android.view.animation.AccelerateInterpolator;
+
+import com.plattysoft.leonids.ParticleSystem;
 
 import org.androidannotations.annotations.EActivity;
 
@@ -17,6 +20,8 @@ import ru.softbalance.newyear.view.fragments.TreeFragment;
 public class MainActivity extends AppCompatActivity implements StartFragment.Callback,
         TreeFragment.Callback,
         HousesFragment.Callback{
+
+    private ParticleSystem ps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,5 +82,27 @@ public class MainActivity extends AppCompatActivity implements StartFragment.Cal
 
     private Fragment buildGreetingFragment() {
         return GreetingFragment.newInstance();
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                // Create a particle system and start emiting
+                ps = new ParticleSystem(this, 100, R.drawable.star_pink, 800);
+                ps.setScaleRange(0.7f, 1.3f);
+                ps.setSpeedRange(0.05f, 0.1f);
+                ps.setRotationSpeedRange(90, 180);
+                ps.setFadeOut(200, new AccelerateInterpolator());
+                ps.emit((int) event.getX(), (int) event.getY(), 40);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                ps.updateEmitPoint((int) event.getX(), (int) event.getY());
+                break;
+            case MotionEvent.ACTION_UP:
+                ps.stopEmitting();
+                break;
+        }
+        return true;
     }
 }

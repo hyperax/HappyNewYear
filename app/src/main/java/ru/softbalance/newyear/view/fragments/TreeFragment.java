@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.List;
 
 import ru.softbalance.newyear.R;
+import ru.softbalance.newyear.helpers.AnimationUtils;
 import ru.softbalance.newyear.helpers.Savable;
 
 @EFragment(R.layout.fragment_tree)
@@ -36,6 +37,9 @@ public class TreeFragment extends BaseFragment implements Savable {
 
     @ViewById(R.id.tree)
     ImageView treeView;
+
+    @ViewById(R.id.star_checkbox)
+    View starView;
 
     @ViewById(R.id.next_btn)
     View nextButton;
@@ -84,6 +88,9 @@ public class TreeFragment extends BaseFragment implements Savable {
     }
 
     private void onCheckedChange(CompoundButton compoundButton, boolean isChecked) {
+        if (isChecked) {
+            AnimationUtils.showStarEffectRandom(getActivity(), compoundButton);
+        }
         tryToLightUpTheTree();
     }
 
@@ -95,6 +102,8 @@ public class TreeFragment extends BaseFragment implements Savable {
             treeView.setImageResource(R.drawable.tree_checked);
             nextButton.setVisibility(View.VISIBLE);
             bottomText.setVisibility(View.INVISIBLE);
+
+            AnimationUtils.showLightStarEffect(getActivity(), starView);
         } else {
             treeBackgroundView.setBackgroundResource(R.drawable.tree_bg_default);
             treeView.setImageResource(R.drawable.tree_default);
