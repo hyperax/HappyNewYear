@@ -7,4 +7,5 @@
     <string name="hurrah">Hurrah!</string>
     <string name="houses_gifts_title">Give gifts to each house!</string>
     <string name="no_gift_for_bad_house">This house is not a gift to give! :)</string>
+    <string name="share">Share</string>
 </resources>
